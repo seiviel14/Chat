@@ -51,7 +51,7 @@ THIRD_PARTY_APPS = [
 ]
 
 LOCAL_APPS = [
-    'web_site',
+    'core',
 ]
 
 
