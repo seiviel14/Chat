@@ -73,6 +73,8 @@ CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
 ]
 
+AUTH_USER_MODEL = 'core_user.User'
+
 REST_FRAMEWORK = {
      'DEFAULT_RENDERER_CLASSES': (
          'rest_framework.renderers.JSONRenderer',
