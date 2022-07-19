@@ -24,3 +24,19 @@ class RegisterSerializer(UserSerializer):
             user = User.objects.create_user(**data_validated)
         
         return user
+
+class LoginSerializer(TokenObtainPairSerializer):
+
+    def validate(self, attributtes):
+        data = super().validate(attributtes)
+
+        refresh = self.get_token(self.user)
+
+        data['user'] = UserSerializer(self.user).data
+        data['refresh'] = str(refresh)
+        data['access'] = str(refresh.access_token)
+
+        if api_settings.UPDATE_LAST_LOGIN:
+            update_last_login(None, self.user)
+
+        return data
