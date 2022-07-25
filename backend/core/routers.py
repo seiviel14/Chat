@@ -1,4 +1,3 @@
-from nturl2path import url2pathname
 from rest_framework.routers import SimpleRouter
 from core.user.viewsets import UserViewSet
 from core.auth.viewsets import LoginViewSet, RegistrationViewSet, RefreshViewSet
