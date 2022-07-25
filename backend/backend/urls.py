@@ -21,5 +21,5 @@ from core.views import front
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', front, name='front'),
-    path('api', include(('core.routers', 'core'), namespace='core-api')),
+    path('api/', include(('core.routers', 'core'), namespace='core-api')),
 ]

@@ -1,4 +1,3 @@
-from typing_extensions import Required
 from rest_framework import serializers
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.settings import api_settings
@@ -10,8 +9,8 @@ from core.user.serializers import UserSerializer
 from core.user.models import User
 
 class RegisterSerializer(UserSerializer):
-    password = serializers.CharField(max_length=128, min_length=8, write_only=True, Required=True)
-    email = serializers.EmailField(max_length=128, write_only=True, Required=True)
+    password = serializers.CharField(max_length=128, min_length=8, write_only=True, required=True)
+    email = serializers.EmailField(max_length=128, write_only=True, required=True)
 
     class Meta:
         model = User

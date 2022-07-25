@@ -1,5 +1,3 @@
-from dataclasses import fields
-from msilib.schema import Class
 from .models import User
 
 from rest_framework import serializers
